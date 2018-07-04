@@ -124,7 +124,7 @@ function Page_ClientValidate(validationGroup) {
     Page_BlockSubmit = !Page_IsValid;
     return Page_IsValid;
 }
-function ValidatorCommonOnSubmit() {
+function ValidatorPrincePortalWeb.CommonOnSubmit() {
     Page_InvalidControlToBeFocused = null;
     var result = !Page_BlockSubmit;
     if ((typeof(window.event) != "undefined") && (window.event != null)) {
@@ -621,7 +621,7 @@ if (window.jQuery) {
             }
             if (typeof (ValidatorOnSubmit) === "undefined") {
                 window.ValidatorOnSubmit = function () {
-                    return Page_ValidationActive ? ValidatorCommonOnSubmit() : true;
+                    return Page_ValidationActive ? ValidatorPrincePortalWeb.CommonOnSubmit() : true;
                 };
             }
         }

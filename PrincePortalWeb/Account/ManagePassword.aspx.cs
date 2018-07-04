@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Providers.Entities;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using PrincePortalWeb.Classes;
 
 namespace PrincePortalWeb.Account
 {
@@ -24,10 +26,17 @@ namespace PrincePortalWeb.Account
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            
+
+            
+
+
 
             if (!IsPostBack)
             {
+
+
+            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
                 // Determine the sections to render
                 if (HasPassword(manager))
                 {
@@ -53,14 +62,30 @@ namespace PrincePortalWeb.Account
         {
             if (IsValid)
             {
+
+               // DataAccessObject dataAccessObject = new DataAccessObject();
+
+
+                
+                
                 var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
                 var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
                 IdentityResult result = manager.ChangePassword(User.Identity.GetUserId(), CurrentPassword.Text, NewPassword.Text);
+                
+
+
                 if (result.Succeeded)
-                {
-                    var user = manager.FindById(User.Identity.GetUserId());
+                {                   
+
+                   var user = manager.FindById(User.Identity.GetUserId());
+                   user.firstLogin = "N";
+
+                   
+                   manager.Update(user);
+                   
                     signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
                     Response.Redirect("~/Account/Manage?m=ChangePwdSuccess");
+
                 }
                 else
                 {
@@ -94,5 +119,8 @@ namespace PrincePortalWeb.Account
                 ModelState.AddModelError("", error);
             }
         }
+
+      
+
     }
 }

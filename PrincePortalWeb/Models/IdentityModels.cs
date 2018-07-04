@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
@@ -11,8 +12,25 @@ using PrincePortalWeb.Models;
 namespace PrincePortalWeb.Models
 {
     // You can add User data for the user by adding more properties to your User class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
+
+
+
+  
+
+
     public class ApplicationUser : IdentityUser
     {
+
+        public int supplierId { get; set; }
+        public string supplierName { get; set; }
+        public string firstLogin { get; set; }
+        public string WebStatus { get; set; }
+        [Column(TypeName = "datetime2")]
+        public DateTime LastLogDateTime { get; set; }
+    
+
+
+
         public ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -25,6 +43,14 @@ namespace PrincePortalWeb.Models
         {
             return Task.FromResult(GenerateUserIdentity(manager));
         }
+
+
+      
+
+
+
+
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

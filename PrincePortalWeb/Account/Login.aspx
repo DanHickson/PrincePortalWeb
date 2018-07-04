@@ -1,65 +1,65 @@
-﻿<%@ Page Title="Log in" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="PrincePortalWeb.Account.Login" Async="true" %>
+﻿<%@ Page Language="C#" Async="true" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="PrincePortalWeb.Account.Login" %>
 
-<%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
+<!DOCTYPE html>
 
-<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h2><%: Title %>.</h2>
 
-    <div class="row">
-        <div class="col-md-8">
-            <section id="loginForm">
-                <div class="form-horizontal">
-                    <h4>Use a local account to log in.</h4>
-                    <hr />
-                    <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
-                        <p class="text-danger">
-                            <asp:Literal runat="server" ID="FailureText" />
-                        </p>
-                    </asp:PlaceHolder>
-                    <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
-                        <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
-                                CssClass="text-danger" ErrorMessage="The email field is required." />
-                        </div>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Login Page</title>
+    <link href="../Content/CSS/Login.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap-theme.css" rel="stylesheet" />
+
+
+</head>
+
+<body class="bg">
+    <form id="form1" runat="server">
+        
+        <div class="container col-md-4 col-md-offset-4 ">
+
+            <div class="modal-dialog loginform-container">
+                <div class="modal-content">
+
+                    <div class="logo" id="logo">
+
+                        <img src="../Content/Images/logo.PNG" class="justify-content-center" />
+
                     </div>
-                    <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
-                        <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="The password field is required." />
-                        </div>
+
+                    <div class="logo">
+                        <h2 class="text-center">Please Login</h2>
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <div class="checkbox">
-                                <asp:CheckBox runat="server" ID="RememberMe" />
-                                <asp:Label runat="server" AssociatedControlID="RememberMe">Remember me?</asp:Label>
-                            </div>
+                    
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input id="textUsername" type="text" class="form-control input-lg" placeholder="Username" required="required" runat="server" autocomplete="off" />
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:Button runat="server" OnClick="LogIn" Text="Log in" CssClass="btn btn-default" />
+
+                        <div class="form-group">
+                            <input id="textPassword" type="password" class="form-control input-lg" placeholder="Password" required="required" runat="server" autocomplete="off" />
+                        </div>                     
+
+                        <div class="form-group">
+
+                            <asp:Button ID="btnLogin" Text="Login" runat="server" OnClick="LogIn" Class="btn btn-block btn-lg btn-primary" />
+                        </div>
+
+                        <div id="dvMessage" runat="server" visible="false" class="justify-content-center alert alert-danger">
+                            <strong>Error!</strong>
+                            <asp:Label ID="lblMessage" runat="server" />
                         </div>
                     </div>
                 </div>
-                <p>
-                    <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register as a new user</asp:HyperLink>
-                </p>
-                <p>
-                    <%-- Enable this once you have account confirmation enabled for password reset functionality
-                    <asp:HyperLink runat="server" ID="ForgotPasswordHyperLink" ViewStateMode="Disabled">Forgot your password?</asp:HyperLink>
-                    --%>
-                </p>
-            </section>
+
+            </div>
+
+
         </div>
 
-        <div class="col-md-4">
-            <section id="socialLoginForm">
-                <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
-            </section>
-        </div>
-    </div>
-</asp:Content>
+
+
+    </form>
+</body>
+</html>
