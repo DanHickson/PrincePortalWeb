@@ -22,6 +22,15 @@ namespace PrincePortalWeb.Pages.Admin {
         protected global::System.Web.UI.WebControls.DropDownList SupplierListDropdown;
         
         /// <summary>
+        /// validateusername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator validateusername;
+        
+        /// <summary>
         /// Name control.
         /// </summary>
         /// <remarks>
@@ -74,5 +83,14 @@ namespace PrincePortalWeb.Pages.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// adduserbutton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button adduserbutton;
     }
 }

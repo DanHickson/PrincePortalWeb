@@ -13,7 +13,11 @@ namespace PrincePortalWeb
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+
+
         }
+
+
 
         public class IdentityRoleHelper
         {

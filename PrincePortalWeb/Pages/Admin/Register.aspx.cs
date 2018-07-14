@@ -15,24 +15,42 @@ namespace PrincePortalWeb.Pages.Admin
 {
     public partial class Register : Page
     {
-
+        private int supplierid { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
             if (!IsPostBack)
             {
+
+                supplierid = Convert.ToInt32(Request.QueryString["supplierid"]);
+
+
+
+
+
                 //populate suppliers dropdown
                 DataAccessObject da = new DataAccessObject();
 
-                DataTable dt = da.GetSuppliers();
-
-                SupplierListDropdown.DataSource = dt;
-                SupplierListDropdown.DataTextField = "suppliername";
-                SupplierListDropdown.DataValueField = "supplierid";
-                SupplierListDropdown.DataBind();
+                DataTable dt = da.GetSupplierByID(supplierid);
 
 
+
+
+                if (dt.Rows.Count > 0)
+                {
+                    SupplierListDropdown.DataSource = dt;
+                    SupplierListDropdown.DataTextField = "suppliername";
+                    SupplierListDropdown.DataValueField = "supplierid";
+                    SupplierListDropdown.DataBind();
+                    SupplierListDropdown.Enabled = false;
+                }
+                else
+                {
+                    dvMessageError.Visible = true;
+                    dvMessageError.InnerText = "Supplier ID Not Passed, cannot add new user. Please try again.";
+                    adduserbutton.Enabled = false;
+                        }
 
             }
 
@@ -46,11 +64,28 @@ namespace PrincePortalWeb.Pages.Admin
 
 
         {
+           
 
+            if (Name.Text.Trim().Contains(" "))
+                {
+                dvMessageError.Visible = true;
+                dvMessageError.InnerText = "Username cannot contain spaces.";
+                return;
+            }
+
+            if (Email.Text.Trim().Contains(" "))
+            {
+                dvMessageError.Visible = true;
+                dvMessageError.InnerText = "Email cannot contain spaces.";
+                return;
+            }
+                       
             dvMessageError.Visible = false;
             dvMessageSuccess.Visible = false;
             string selectedSupplier = SupplierListDropdown.SelectedItem.Text.Trim();
             int selectedSupplierID = Convert.ToInt32(SupplierListDropdown.SelectedValue);
+                                            
+
 
 
             if (string.IsNullOrEmpty(selectedSupplier))
@@ -64,7 +99,7 @@ namespace PrincePortalWeb.Pages.Admin
                 //create user then send email invitiation
                 var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
                 var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-                var user = new ApplicationUser() { UserName = Name.Text, Email = Email.Text, supplierId = selectedSupplierID, supplierName = selectedSupplier, firstLogin = "Y",WebStatus="Invited To Portal",LastLogDateTime=DateTime.MinValue};
+                var user = new ApplicationUser() { UserName = Name.Text.Trim(), Email = Email.Text.Trim(), supplierId = selectedSupplierID, supplierName = selectedSupplier.Trim(), firstLogin = "Y",WebStatus="Invited To Portal",LastLogDateTime=DateTime.MinValue};
 
 
                 string password = Membership.GeneratePassword(10, 2) + "6"+"Dh";

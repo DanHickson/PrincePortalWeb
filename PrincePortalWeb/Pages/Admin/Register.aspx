@@ -5,7 +5,7 @@
   
 
     <div class="form-horizontal">
-        <h4>Create a new account</h4>
+        <h4>Add a new user</h4>
         <hr />
 
         
@@ -21,7 +21,9 @@
           
     
           <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="Name" CssClass="col-md-2 control-label">Username</asp:Label>
+              <asp:regularexpressionvalidator id="validateusername" runat="server" controltovalidate="Name" ErrorMessage="Spaces are not allowed" ValidationExpression="[^\s]+" />
+   
+            <asp:Label runat="server" AssociatedControlID="Name" CssClass="col-md-2 control-label" >Username</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Name" CssClass="form-control"  />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Name"
@@ -65,7 +67,7 @@
         </div>--%>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <asp:Button runat="server" OnClick="CreateUser_Click" Text="Invite" CssClass="btn btn-default" ToolTip="This will invite the user to the portal by sending an email to the specified address." />
+                <asp:Button runat="server" ID="adduserbutton" CausesValidation="true" OnClick="CreateUser_Click" Text="Invite" CssClass="btn btn-default" ToolTip="This will invite the user to the portal by sending an email to the specified address." />
             </div>
         </div>
     </div>

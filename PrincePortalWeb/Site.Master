@@ -6,12 +6,17 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - Prince Web Portal</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+      <%--  "~/Content/css" />--%>
+    
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -45,7 +50,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a class="navbar-brand" runat="server" >Prince Web Portal</a>
                 </div>
 
                 <div class="navbar-collapse collapse" id="UserNavpanel" runat="server">
@@ -77,9 +82,9 @@
 
                 <div class="navbar-collapse collapse" id="AdminNavpanel" runat="server">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/pages/admin/adminland.aspx">Dashboard</a></li>
-                        <li><a runat="server" href="~/pages/admin/supplieredit.aspx">Add/Edit Suppliers</a></li>
-                        <li><a runat="server" href="~/pages/admin/register.aspx">Add/Edit Contacts</a></li>
+                        <li><a runat="server" href="~/pages/admin/supplieredit.aspx">Dashboard</a></li>
+                       <%-- <li><a runat="server" href="~/pages/admin/supplieredit.aspx">Add/Edit Suppliers</a></li>--%>
+                       <%-- <li><a runat="server" href="~/pages/admin/register.aspx">Add/Edit Contacts</a></li>--%>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled" ID="LoginView1">
                         <AnonymousTemplate>
@@ -106,11 +111,17 @@
             </div>
         </div>
         <div class="container body-content">
+             <asp:ContentPlaceHolder ID="Header" runat="server">
+                 <div class="container">
+
+
+                 </div>
+            </asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Prince Materials</p>
             </footer>
         </div>
     </form>

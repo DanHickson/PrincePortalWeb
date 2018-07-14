@@ -45,13 +45,47 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework.Web.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.Web.UI.DataSource.1.0.0.0\lib\net45\EntityFramework.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.DynamicData.EFProvider, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.DynamicData.EFProvider.6.0.0\lib\net40\Microsoft.AspNet.DynamicData.EFProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.EntityDataSource, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.EntityDataSource.6.0.0\lib\net40\Microsoft.AspNet.EntityDataSource.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Entity.Design.Extensibility, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.6\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -181,7 +215,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
@@ -191,14 +224,54 @@
     <Content Include="Account\ManageLogins.aspx" />
     <Content Include="Account\ManagePassword.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Context.tt" />
+    <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Entity.tt" />
+    <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Mapping.tt" />
+    <Content Include="Content\Images\cancelicon.png" />
+    <Content Include="Content\Images\deleteicon.png" />
+    <Content Include="Content\Images\detailicon.png" />
+    <Content Include="Content\Images\editicon.png" />
+    <Content Include="Content\Images\passwordicon.png" />
+    <Content Include="Content\Images\producticon.png" />
+    <Content Include="Content\Images\select.png" />
+    <Content Include="Content\Images\tickicon.png" />
+    <Content Include="Content\Images\usericon.png" />
+    <Content Include="DynamicData\EntityTemplates\Default.ascx" />
+    <Content Include="DynamicData\EntityTemplates\Default_Edit.ascx" />
+    <Content Include="DynamicData\EntityTemplates\Default_Insert.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Boolean.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Boolean_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Children.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Children_Insert.ascx" />
+    <Content Include="DynamicData\FieldTemplates\DateTime.ascx" />
+    <Content Include="DynamicData\FieldTemplates\DateTime_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Decimal_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\EmailAddress.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Enumeration.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\ForeignKey.ascx" />
+    <Content Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Integer_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\ManyToMany.ascx" />
+    <Content Include="DynamicData\FieldTemplates\ManyToMany_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Text.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Text_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Url.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Url_Edit.ascx" />
+    <Content Include="EFReverseDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EFReverseDB.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
+    <Content Include="Pages\Admin\AddSupplier.aspx" />
+    <Content Include="Pages\Admin\EditUsers.aspx" />
     <Content Include="Pages\Admin\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -214,7 +287,6 @@
     <Content Include="Content\Images\mainbg.jpg" />
     <Content Include="Content\Images\mainbg2.jpg" />
     <Content Include="Content\Site.css" />
-    <Content Include="Default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -231,6 +303,8 @@
     </Content>
     <Content Include="Pages\Admin\Web.config" />
     <Content Include="Pages\Web.config" />
+    <Content Include="EF.Reverse.POCO.Core.ttinclude" />
+    <Content Include="EF.Reverse.POCO.ttinclude" />
     <None Include="Properties\PublishProfiles\DanHickson - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Images\bg1.jpg" />
@@ -249,6 +323,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
@@ -343,6 +422,9 @@
     <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\BundleConfig2.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig2.cs" />
     <Compile Include="Common\BrokenRules.cs" />
     <Compile Include="Common\Const.cs" />
     <Compile Include="Common\CustomValidationException.cs" />
@@ -361,21 +443,242 @@
     <Compile Include="Common\UtilsRepeater.cs" />
     <Compile Include="Common\UtilsString.cs" />
     <Compile Include="Common\UtilsWeb.cs" />
-    <Compile Include="Migrations\201807031848067_addfirstlogin.cs" />
-    <Compile Include="Migrations\201807031848067_addfirstlogin.Designer.cs">
-      <DependentUpon>201807031848067_addfirstlogin.cs</DependentUpon>
+    <Compile Include="Controllers\suppliersController.cs" />
+    <Compile Include="DynamicData\EntityTemplates\Default.ascx.cs">
+      <DependentUpon>Default.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Migrations\201807041048439_addwebstatustocontact.cs" />
-    <Compile Include="Migrations\201807041048439_addwebstatustocontact.Designer.cs">
-      <DependentUpon>201807041048439_addwebstatustocontact.cs</DependentUpon>
+    <Compile Include="DynamicData\EntityTemplates\Default.ascx.designer.cs">
+      <DependentUpon>Default.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807041836090_addlastlogdatetime.cs" />
-    <Compile Include="Migrations\201807041836090_addlastlogdatetime.Designer.cs">
-      <DependentUpon>201807041836090_addlastlogdatetime.cs</DependentUpon>
+    <Compile Include="DynamicData\EntityTemplates\Default_Edit.ascx.cs">
+      <DependentUpon>Default_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Migrations\201807042011531_changedbdatetimetodatetime2.cs" />
-    <Compile Include="Migrations\201807042011531_changedbdatetimetodatetime2.Designer.cs">
-      <DependentUpon>201807042011531_changedbdatetimetodatetime2.cs</DependentUpon>
+    <Compile Include="DynamicData\EntityTemplates\Default_Edit.ascx.designer.cs">
+      <DependentUpon>Default_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\EntityTemplates\Default_Insert.ascx.cs">
+      <DependentUpon>Default_Insert.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\EntityTemplates\Default_Insert.ascx.designer.cs">
+      <DependentUpon>Default_Insert.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean.ascx.cs">
+      <DependentUpon>Boolean.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean.ascx.designer.cs">
+      <DependentUpon>Boolean.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean_Edit.ascx.cs">
+      <DependentUpon>Boolean_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean_Edit.ascx.designer.cs">
+      <DependentUpon>Boolean_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children.ascx.cs">
+      <DependentUpon>Children.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children.ascx.designer.cs">
+      <DependentUpon>Children.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children_Insert.ascx.cs">
+      <DependentUpon>Children_Insert.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children_Insert.ascx.designer.cs">
+      <DependentUpon>Children_Insert.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime.ascx.cs">
+      <DependentUpon>DateTime.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime.ascx.designer.cs">
+      <DependentUpon>DateTime.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime_Edit.ascx.cs">
+      <DependentUpon>DateTime_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime_Edit.ascx.designer.cs">
+      <DependentUpon>DateTime_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Decimal_Edit.ascx.cs">
+      <DependentUpon>Decimal_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Decimal_Edit.ascx.designer.cs">
+      <DependentUpon>Decimal_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\EmailAddress.ascx.cs">
+      <DependentUpon>EmailAddress.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\EmailAddress.ascx.designer.cs">
+      <DependentUpon>EmailAddress.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration.ascx.cs">
+      <DependentUpon>Enumeration.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration.ascx.designer.cs">
+      <DependentUpon>Enumeration.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx.cs">
+      <DependentUpon>Enumeration_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx.designer.cs">
+      <DependentUpon>Enumeration_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey.ascx.cs">
+      <DependentUpon>ForeignKey.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey.ascx.designer.cs">
+      <DependentUpon>ForeignKey.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx.cs">
+      <DependentUpon>ForeignKey_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx.designer.cs">
+      <DependentUpon>ForeignKey_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Integer_Edit.ascx.cs">
+      <DependentUpon>Integer_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Integer_Edit.ascx.designer.cs">
+      <DependentUpon>Integer_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ManyToMany.ascx.cs">
+      <DependentUpon>ManyToMany.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ManyToMany.ascx.designer.cs">
+      <DependentUpon>ManyToMany.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ManyToMany_Edit.ascx.cs">
+      <DependentUpon>ManyToMany_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ManyToMany_Edit.ascx.designer.cs">
+      <DependentUpon>ManyToMany_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx.cs">
+      <DependentUpon>MultilineText_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx.designer.cs">
+      <DependentUpon>MultilineText_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text.ascx.cs">
+      <DependentUpon>Text.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text.ascx.designer.cs">
+      <DependentUpon>Text.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text_Edit.ascx.cs">
+      <DependentUpon>Text_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text_Edit.ascx.designer.cs">
+      <DependentUpon>Text_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Url.ascx.cs">
+      <DependentUpon>Url.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Url.ascx.designer.cs">
+      <DependentUpon>Url.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Url_Edit.ascx.cs">
+      <DependentUpon>Url_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Url_Edit.ascx.designer.cs">
+      <DependentUpon>Url_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EFReverseDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFReverseDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\ProductsContext\201807051827595_initialmigration.cs" />
+    <Compile Include="Migrations\ProductsContext\201807051827595_initialmigration.Designer.cs">
+      <DependentUpon>201807051827595_initialmigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ProductsContext\201807051830240_addtestfieldmigration.cs" />
+    <Compile Include="Migrations\ProductsContext\201807051830240_addtestfieldmigration.Designer.cs">
+      <DependentUpon>201807051830240_addtestfieldmigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ProductsContext\201807051832017_removetestfieldmigration.cs" />
+    <Compile Include="Migrations\ProductsContext\201807051832017_removetestfieldmigration.Designer.cs">
+      <DependentUpon>201807051832017_removetestfieldmigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ProductsContext\ProductsContextConfig.cs" />
+    <Compile Include="Migrations\SupplierContext\201807051825571_initialmigration.cs" />
+    <Compile Include="Migrations\SupplierContext\201807051825571_initialmigration.Designer.cs">
+      <DependentUpon>201807051825571_initialmigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\SupplierContext\201807052006279_initialmigration1.cs" />
+    <Compile Include="Migrations\SupplierContext\201807052006279_initialmigration1.Designer.cs">
+      <DependentUpon>201807052006279_initialmigration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\SupplierContext\201807092056033_addenumstatus.cs" />
+    <Compile Include="Migrations\SupplierContext\201807092056033_addenumstatus.Designer.cs">
+      <DependentUpon>201807092056033_addenumstatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\SupplierContext\201807100930339_change2date.cs" />
+    <Compile Include="Migrations\SupplierContext\201807100930339_change2date.Designer.cs">
+      <DependentUpon>201807100930339_change2date.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\SupplierContext\201807100936404_changeback2datetime.cs" />
+    <Compile Include="Migrations\SupplierContext\201807100936404_changeback2datetime.Designer.cs">
+      <DependentUpon>201807100936404_changeback2datetime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\SupplierContext\201807101515224_changekey.cs" />
+    <Compile Include="Migrations\SupplierContext\201807101515224_changekey.Designer.cs">
+      <DependentUpon>201807101515224_changekey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\SupplierContext\201807102059538_test.cs" />
+    <Compile Include="Migrations\SupplierContext\201807102059538_test.Designer.cs">
+      <DependentUpon>201807102059538_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\SupplierContext\201807111345344_test1.cs" />
+    <Compile Include="Migrations\SupplierContext\201807111345344_test1.Designer.cs">
+      <DependentUpon>201807111345344_test1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\SupplierContext\201807132016244_test2.cs" />
+    <Compile Include="Migrations\SupplierContext\201807132016244_test2.Designer.cs">
+      <DependentUpon>201807132016244_test2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\SupplierContext\201807132114030_test3.cs" />
+    <Compile Include="Migrations\SupplierContext\201807132114030_test3.Designer.cs">
+      <DependentUpon>201807132114030_test3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\SupplierContext\SupplierContextConfig.cs" />
+    <Compile Include="Models\SupplierDBModel.cs" />
+    <Compile Include="Pages\Admin\AddSupplier.aspx.cs">
+      <DependentUpon>AddSupplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\AddSupplier.aspx.designer.cs">
+      <DependentUpon>AddSupplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\EditUsers.aspx.cs">
+      <DependentUpon>EditUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\EditUsers.aspx.designer.cs">
+      <DependentUpon>EditUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -420,13 +723,6 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
@@ -435,36 +731,9 @@
     <Compile Include="Classes\DataConnection.cs" />
     <Compile Include="Classes\Utils.cs" />
     <Compile Include="Classes\ValueObject.cs" />
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807030932439_InitialMigrations.cs" />
-    <Compile Include="Migrations\201807030932439_InitialMigrations.Designer.cs">
-      <DependentUpon>201807030932439_InitialMigrations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807030933523_SupplierInfo.cs" />
-    <Compile Include="Migrations\201807030933523_SupplierInfo.Designer.cs">
-      <DependentUpon>201807030933523_SupplierInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807031308578_nameasusername.cs" />
-    <Compile Include="Migrations\201807031308578_nameasusername.Designer.cs">
-      <DependentUpon>201807031308578_nameasusername.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Classes\Supplier.cs" />
     <Compile Include="Pages\Admin\AdminLand.aspx.cs">
@@ -488,6 +757,8 @@
     <Compile Include="Pages\UserLand.aspx.designer.cs">
       <DependentUpon>UserLand.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\PrinceProduct.cs" />
+    <Compile Include="Models\Products.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -504,6 +775,7 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Models\supplierProduct.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -519,6 +791,15 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\web.config" />
+    <Content Include="Views\suppliers\Create.cshtml" />
+    <Content Include="Views\suppliers\Delete.cshtml" />
+    <Content Include="Views\suppliers\Details.cshtml" />
+    <Content Include="Views\suppliers\Edit.cshtml" />
+    <Content Include="Views\suppliers\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -527,26 +808,47 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807030932439_InitialMigrations.resx">
-      <DependentUpon>201807030932439_InitialMigrations.cs</DependentUpon>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\ProductsContext\201807051827595_initialmigration.resx">
+      <DependentUpon>201807051827595_initialmigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807030933523_SupplierInfo.resx">
-      <DependentUpon>201807030933523_SupplierInfo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\ProductsContext\201807051830240_addtestfieldmigration.resx">
+      <DependentUpon>201807051830240_addtestfieldmigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807031308578_nameasusername.resx">
-      <DependentUpon>201807031308578_nameasusername.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\ProductsContext\201807051832017_removetestfieldmigration.resx">
+      <DependentUpon>201807051832017_removetestfieldmigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807031848067_addfirstlogin.resx">
-      <DependentUpon>201807031848067_addfirstlogin.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\SupplierContext\201807051825571_initialmigration.resx">
+      <DependentUpon>201807051825571_initialmigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807041048439_addwebstatustocontact.resx">
-      <DependentUpon>201807041048439_addwebstatustocontact.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\SupplierContext\201807052006279_initialmigration1.resx">
+      <DependentUpon>201807052006279_initialmigration1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807041836090_addlastlogdatetime.resx">
-      <DependentUpon>201807041836090_addlastlogdatetime.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\SupplierContext\201807092056033_addenumstatus.resx">
+      <DependentUpon>201807092056033_addenumstatus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807042011531_changedbdatetimetodatetime2.resx">
-      <DependentUpon>201807042011531_changedbdatetimetodatetime2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\SupplierContext\201807100930339_change2date.resx">
+      <DependentUpon>201807100930339_change2date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\SupplierContext\201807100936404_changeback2datetime.resx">
+      <DependentUpon>201807100936404_changeback2datetime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\SupplierContext\201807101515224_changekey.resx">
+      <DependentUpon>201807101515224_changekey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\SupplierContext\201807102059538_test.resx">
+      <DependentUpon>201807102059538_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\SupplierContext\201807111345344_test1.resx">
+      <DependentUpon>201807111345344_test1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\SupplierContext\201807132016244_test2.resx">
+      <DependentUpon>201807132016244_test2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\SupplierContext\201807132114030_test3.resx">
+      <DependentUpon>201807132114030_test3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

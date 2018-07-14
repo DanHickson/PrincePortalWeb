@@ -68,7 +68,7 @@ namespace PrincePortalWeb.Account
 
                         if (isadmin)
                         {
-                            Response.Redirect("~/pages/admin/adminland.aspx");
+                            Response.Redirect("~/pages/admin/supplieredit.aspx");
                         }
                         else
                         {

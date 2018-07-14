@@ -76,6 +76,22 @@ namespace PrincePortalWeb
             return conn.executeSelectQueryNoParam(query);
 
         }
+        public DataTable GetSupplierByID(int id)
+        {
+
+
+            DataTable dt = new DataTable();
+
+            string query = "select * from suppliers where supplierid=@supplierid";
+
+
+            SqlParameter[] sqlParameters = new SqlParameter[1];
+            sqlParameters[0] = new SqlParameter("@supplierid", id);
+
+
+            return conn.executeSelectQuery(query,sqlParameters);
+
+        }
 
         public DataTable GetSuppliersWithFilter(string supplierName)
         {

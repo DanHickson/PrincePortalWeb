@@ -12,6 +12,10 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
+using System.Web.Mvc;
+using System.Web.Routing;
+using System.Web.Optimization;
+
 
 namespace PrincePortalWeb
 {
@@ -33,7 +37,12 @@ namespace PrincePortalWeb
             GlobalVariables.SMTPPORT = 587;
             GlobalVariables.princeportaladdress = "www.google.co.uk";
             GlobalVariables.FROMEMAILADDRESS = "ADMIN@PRINCE.CO.UK";
-     
+
+            AreaRegistration.RegisterAllAreas();
+            RouteConfig2.RegisterRoutes(RouteTable.Routes);
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            BundleConfig2.RegisterBundles(BundleTable.Bundles);
+
         }
 
         public static class GlobalVariables

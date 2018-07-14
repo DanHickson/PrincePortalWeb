@@ -1,0 +1,99 @@
+﻿@model IEnumerable<PrincePortalWeb.Models.supplier>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.suppliername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.county)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telephone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postcode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.webstatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastreviewedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Whencompliant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reviewdate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.suppliername)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.county)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telephone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postcode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.webstatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastreviewedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Whencompliant)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reviewdate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.supplierid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.supplierid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.supplierid })
+        </td>
+    </tr>
+}
+
+</table>
